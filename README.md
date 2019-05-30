@@ -15,6 +15,11 @@
 * User-defined plot width and height
 * Redesigned pgfplots marker table for ggplot2 shapes (only black supported for half-markers for now)
 
+<p align=middle>
+  <img src="/README/ggplot2-shapes.png" width="100" />
+</p>
+
+
 ## scatter2pgf
 
 * Plots all points separated by aesthetic
