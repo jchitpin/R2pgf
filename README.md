@@ -17,7 +17,7 @@
 
 <p align=middle>
   <img src="/README/ggplot2-shapes.png" height="300" />
-  <img src="/README/R2pgf-markers.pdf" height="300" />
+  <img src="/README/R2pgf-markers.png" height="300" />
 </p>
 
 
