@@ -7,6 +7,7 @@
 #ylabNotation <- "norm"
 #legendMat <- matrix(c("GeneralID", "1"), nrow = 1, ncol = 2)
 
+
 #scatter2pgf(ggbuild = g, filename = "C:/Users/df/Desktop/Test2.tex",
 #            width = "6", height = "4", legendLocation = "SE",
 #            xlabNotation = "norm", ylabNotation = "norm",
