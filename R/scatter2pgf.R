@@ -7,7 +7,6 @@
 #ylabNotation <- "norm"
 #legendMat <- matrix(c("GeneralID", "1"), nrow = 1, ncol = 2)
 
-
 #scatter2pgf(ggbuild = g, filename = "C:/Users/df/Desktop/Test2.tex",
 #            width = "6", height = "4", legendLocation = "SE",
 #            xlabNotation = "norm", ylabNotation = "norm",
@@ -117,31 +116,31 @@ scatter2pgf <- function(ggbuild,
                                   "halfdiamond*, mark options={solid, rotate=270}",
                                   "halfdiamond*, mark options={solid, rotate=45}",
                                   "halfdiamond*, mark options={solid, rotate=135}",
-                                  "halfcircle*, mark options={solid, fill=black, rotate=180}",
-                                  "halfcircle*, mark options={solid, fill=black, rotate=270}",
-                                  "halfcircle*, mark options={solid, fill=black}",
-                                  "halfcircle*, mark options={solid, fill=black, rotate=90}",
-                                  "halfcircle*, mark options={solid, fill=black, rotate=225}",
-                                  "halfcircle*, mark options={solid, fill=black, rotate=315}",
-                                  "halfcircle*, mark options={solid, fill=black, rotate=45}",
-                                  "halfcircle*, mark options={solid, fill=black, rotate=135}",
-                                  "halfsquare*, mark options={solid, fill=black}",
-                                  "halfsquare*, mark options={solid, fill=black, rotate=90}",
-                                  "halfsquare*, mark options={solid, fill=black, rotate=180}",
-                                  "halfsquare*, mark options={solid, fill=black, rotate=270}",
-                                  "halfsquare*, mark options={solid, fill=black, rotate=45}",
-                                  "halfsquare*, mark options={solid, fill=black, rotate=135}",
-                                  "halfsquare*, mark options={solid, fill=black, rotate=225}",
-                                  "halfsquare*, mark options={solid, fill=black, rotate=315}",
-                                  "*, mark options={solid, fill=black}",
-                                  "triangle*, mark options={solid, fill=black}",
-                                  "square*, mark options={solid, fill=black, rotate=45}",
+                                  "halfcircle*, mark options={solid, rotate=180}",
+                                  "halfcircle*, mark options={solid, rotate=270}",
+                                  "halfcircle*, mark options={solid}",
+                                  "halfcircle*, mark options={solid, rotate=90}",
+                                  "halfcircle*, mark options={solid, rotate=225}",
+                                  "halfcircle*, mark options={solid, rotate=315}",
+                                  "halfcircle*, mark options={solid, rotate=45}",
+                                  "halfcircle*, mark options={solid, rotate=135}",
+                                  "halfsquare*, mark options={solid}",
+                                  "halfsquare*, mark options={solid, rotate=90}",
+                                  "halfsquare*, mark options={solid, rotate=180}",
+                                  "halfsquare*, mark options={solid, rotate=270}",
+                                  "halfsquare*, mark options={solid, rotate=45}",
+                                  "halfsquare*, mark options={solid, rotate=135}",
+                                  "halfsquare*, mark options={solid, rotate=225}",
+                                  "halfsquare*, mark options={solid, rotate=315}",
+                                  "*, mark options={solid}",
+                                  "triangle*, mark options={solid}",
+                                  "square*, mark options={solid, rotate=45}",
                                   "diamond, mark options=solid, rotate=90}",
-                                  "diamond*, mark options={solid, fill=black, rotate=90}",
+                                  "diamond*, mark options={solid, rotate=90}",
                                   "diamond, mark options={solid, rotate=315}",
-                                  "diamond*, mark options={solid, fill=black, rotate=315}",
+                                  "diamond*, mark options={solid, rotate=315}",
                                   "diamond, mark options={solid, rotate=45}",
-                                  "diamond*, mark options={solid, fill=black, rotate=45}",
+                                  "diamond*, mark options={solid, rotate=45}",
                                   "Mercedes star, mark options={solid, rotate=180}",
                                   "square, mark options={solid}",
                                   "o, mark options={solid}",
@@ -154,11 +153,11 @@ scatter2pgf <- function(ggbuild,
                                   "asterisk, mark options={solid}",
                                   "diamond, mark options={solid}",
                                   "oplus, mark options={solid}",
-                                  "diamond*, mark options={solid, fill=black}",
+                                  "diamond*, mark options={solid}",
                                   "pentagon, mark options={solid}",
                                   "otimes, mark options={solid}",
-                                  "pentagon*, mark options={solid, fill=black}",
-                                  "square*, mark options={solid, fill=black}"
+                                  "pentagon*, mark options={solid}",
+                                  "square*, mark options={solid}"
                                   ))
 
   ## Initialize blank output tex file
@@ -183,6 +182,8 @@ scatter2pgf <- function(ggbuild,
   for(i in seq_along(myColours)){
     if(grepl("#", myColours[i], fixed = T) == T){
       write(paste0("\\definecolor{colour", i, "}{HTML}{", gsub("#", "", myColours[i]), "}%"), filename, append = T)
+    } else if(myColours[i] == "black"){
+      write(paste0("\\definecolor{colour", i, "}{HTML}{000000}%"), filename, append = T)
     } else{
       write(paste0("\\definecolor{colour", i, "}{", myColours[i], "}{1.0}%"), filename, append = T)
     }
@@ -199,13 +200,13 @@ scatter2pgf <- function(ggbuild,
   write("clip=true,", filename, append = T, sep = "")
   write("ticklabel style={font=\\LARGE},", filename, append = T, sep = "")
   write("label style={font=\\LARGE},", filename, append = T, sep = "")
-  write("xlabel style={font=\\color{white!15!black}},", filename, append = T, sep = "")
-  write("ylabel style={font=\\color{white!15!black}},", filename, append = T, sep = "")
+  write("xlabel style={font=\\color{white!15!black}, font=\\LARGE},", filename, append = T, sep = "")
+  write("ylabel style={font=\\color{white!15!black}, font=\\LARGE},", filename, append = T, sep = "")
   write(paste0("width=", width, "in,"), filename, append = T, sep = "")
   write(paste0("height=", height, "in,"), filename, append = T, sep = "")
   write("scale only axis,", filename, append = T, sep = "")
   write("xtick pos=left,", filename, append = T, sep = "")
-  write("ytick pos=left", filename, append = T, sep = "")
+  write("ytick pos=left,", filename, append = T, sep = "")
 
   ## Setting logarithm scales to false
   write("xmode=normal,", filename, append = T, sep = "")

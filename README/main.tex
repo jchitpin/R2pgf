@@ -1,0 +1,23 @@
+\documentclass{article}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{pgfplots}
+\usepackage{tikz}
+\usetikzlibrary{shapes,arrows,calc,trees,positioning,chains,shapes.geometric,decorations.pathreplacing,decorations.pathmorphing, shapes.arrows,quotes, arrows.meta, spy}
+\usetikzlibrary{patterns}
+\usepgfplotslibrary{external}
+\tikzexternalize
+\pgfplotsset{compat=newest} 
+\pgfplotsset{plot coordinates/math parser=false} 
+\newlength\figureheight 
+\newlength\figurewidth 
+
+\usepackage[margin=0.25in]{geometry}
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{siunitx}
+
+
+\begin{document}
+\input{iris.tex}
+\end{document} 
