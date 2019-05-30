@@ -16,7 +16,8 @@
 * Redesigned pgfplots marker table for ggplot2 shapes (only black supported for half-markers for now)
 
 <p align=middle>
-  <img src="/README/ggplot2-shapes.png" width="100" />
+  <img src="/README/ggplot2-shapes.png" height="300" />
+  <img src="/README/R2pgf-markers.pdf" height="300" />
 </p>
 
 
