@@ -2,7 +2,8 @@
 
 * You like LaTeX
 * You like consistent looking text and figures
-* You use ggplot2 for plotting but dislike the aesthetic
+* You use ggplot2 for plotting
+* You've tried tikzDevice but hate tinkering to make it look less 'R'-like
 * You want an automated method of generating pgfplot figures from ggplot2 objects
 
 ## Notes
@@ -18,6 +19,7 @@
 * TBD: Specifying legend aesthetic requires 'x' and 'y' column name for g
 * TBD: Specifying legend aesthetic makes x/y-labels 'x' and 'y'
 * TBD: Add support for separate fill/border colours
+* TBD: Title support
 
 ## Workflow
 
