@@ -36,6 +36,11 @@ g
 g <- ggplot_build(g)
 
 ## Running |scatter2pgf| will save a file in the current working directory
+# legendLocation defaults are 'NE', 'SE', 'SW', 'NW'
+# x/ylabNotation = 'norm' or 'exp' (not implemented)
+# legendMat is a matrix that refers to the aesthetic name in the first column
+# and the list layer in ggbuild$data[[]] in the second column
+
 setwd("..")
 scatter2pgf(ggbuild = g, filename = "iris.tex",
             width = "6", height = "4", legendLocation = "SE",
