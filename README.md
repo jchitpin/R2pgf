@@ -13,7 +13,7 @@
 
 ## General features
 * User-defined plot width and height
-* Redesigned pgfplots marker table for ggplot2 shapes (only black supported for half-markers for now)
+* Redesigned pgfplots marker table for ggplot2 shapes (only black fill supported for half-markers for now)
 
 <p align=middle>
   <img src="/README/ggplot2-shapes.png" height="200" />
